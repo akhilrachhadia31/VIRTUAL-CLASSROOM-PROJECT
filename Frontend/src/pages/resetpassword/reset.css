@@ -1,0 +1,103 @@
+/* Container for the entire reset password page */
+.reset-password-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #d5d5de;; /* Consistent dark background */
+  margin: 0;
+}
+
+/* Box containing the reset password form */
+.reset-password-box {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px; /* Rounded edges for a modern look */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.235); /* Soft shadow effect */
+  text-align: center;
+  width: 100%;
+  max-width: 400px; /* Limit max width for larger screens */
+  margin: 1rem; /* Margin for better responsiveness */
+  transition: transform 0.3s ease; /* Hover lift effect */
+}
+
+/* Hover effect for the box */
+.reset-password-box:hover {
+  transform: translateY(-10px);
+}
+
+/* Heading style */
+.reset-password-box h1 {
+  font-size: 28px;
+  color: #000000; /* Blue color to stand out */
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* Paragraph style */
+.reset-password-box p {
+  font-size: 15px;
+  color: #777;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Form style */
+.reset-password-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* Space between inputs */
+}
+
+/* Input field style */
+.reset-password-box input[type="password"] {
+  padding: 1rem;
+  font-size: 16px; /* Larger font for readability */
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Rounded corners for input fields */
+  width: 100%;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth focus transition */
+}
+
+.reset-password-box input[type="password"]:focus {
+  outline: none;
+  border-color: #2575fc;
+  box-shadow: 0 0 8px rgba(37, 117, 252, 0.5); /* Soft blue glow on focus */
+}
+
+/* Button style */
+.reset-password-box button {
+  background-color: #2575fc;
+  color: white;
+  padding: 1rem;
+  font-size: 18px; /* Larger font size for button */
+  border: none;
+  border-radius: 8px; /* Rounded edges for button */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button hover effect */
+.reset-password-box button:hover {
+  background-color: #000000;
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Button active/click effect */
+.reset-password-box button:active {
+  transform: translateY(2px); /* Button press effect */
+}
+
+/* Message display style */
+.message {
+  margin-top: 1.5rem;
+  font-size: 16px; /* Slightly larger for readability */
+  color: #007bff; /* Blue color for success/failure messages */
+  font-weight: 600;
+  transition: color 0.3s ease; /* Smooth color change */
+}
+
+.message:hover {
+  color: #020e1b; /* Darker blue on hover */
+  text-decoration: underline;
+}

@@ -1,0 +1,101 @@
+.otp-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+  font-family: "Arial", sans-serif;
+  color: #000000;
+}
+
+.otp-card {
+  background: #fff;
+  color: #0d0d0d;
+  padding: 2.5rem;
+  border-radius: 15px; /* Slightly more rounded corners */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.235); /* Softer, larger shadow */
+  text-align: center;
+  width: 100%;
+  max-width: 400px; /* Ensures card doesn't become too wide */
+  margin: 1rem; /* Padding around the card for responsiveness */
+  transition: transform 0.3s ease-in-out; /* Card hover effect */
+}
+
+.otp-card:hover {
+  transform: translateY(-10px); /* Card hover lift effect */
+}
+
+.otp-card h1 {
+  font-size: 28px;
+  margin-bottom: 1.5rem;
+  color: #000000;
+  font-weight: 600;
+}
+
+.otp-card p {
+  font-size: 15px;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  color: #777;
+}
+
+.otp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.otp-input {
+  padding: 1rem;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  letter-spacing: 6px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.otp-input:focus {
+  outline: none;
+  border-color: #2575fc;
+  box-shadow: 0 0 8px rgba(37, 117, 252, 0.5);
+}
+
+.otp-button {
+  background-color: #2575fc;
+  color: #fff;
+  padding: 1rem;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.otp-button:hover {
+  background-color: #6a11cb;
+  transform: translateY(-2px);
+}
+
+.otp-button:active {
+  transform: translateY(2px);
+}
+
+.resend-text {
+  font-size: 14px;
+  margin-top: 1.25rem;
+  color: #ddd;
+}
+
+.resend-text a {
+  color: #2575fc;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.resend-text a:hover {
+  color: #6a11cb;
+  text-decoration: underline;
+}
