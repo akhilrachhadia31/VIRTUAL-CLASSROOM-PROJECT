@@ -1,0 +1,163 @@
+/* General container styling */
+.reset-password-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #0F172A, #1E293B); /* Dark gradient background */
+  margin: 0;
+  font-family: "Arial", sans-serif; /* Consistent font style */
+  color: #ffffff; /* White text for better contrast */
+}
+
+/* Reset password form box */
+.reset-password-box {
+  background: #1E293B; /* Dark box background */
+  padding: 2.5rem;
+  border-radius: 12px; /* Rounded edges */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 1rem;
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+/* Box hover effect */
+.reset-password-box:hover {
+  transform: translateY(-5px); /* Gentle lift effect */
+}
+
+/* Form heading */
+.reset-password-box h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #ffffff; /* Bright white text */
+}
+
+/* Form description */
+.reset-password-box p {
+  font-size: 14px;
+  color: #94A3B8; /* Muted text color */
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Form container */
+.reset-password-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Spacing between form fields */
+}
+
+/* Input field */
+.input-password {
+  padding: 1rem;
+  font-size: 16px;
+  border: 1px solid #475569; /* Subtle border color */
+  background-color: #0F172A; /* Dark background for inputs */
+  color: #ffffff; /* White text for readability */
+  border-radius: 8px;
+  width: 100%;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth focus effect */
+}
+
+/* Input field focus */
+.input-password:focus {
+  outline: none;
+  border-color: #2563EB; /* Blue border on focus */
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.5); /* Glow effect */
+}
+
+/* Password toggle button */
+.toggle-password-btn {
+  background: none; /* Transparent background */
+  border: none;
+  color: #94A3B8; /* Muted text color for toggle button */
+  font-size: 16px; /* Match input size */
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for toggle button */
+.toggle-password-btn:hover {
+  color: #2563EB; /* Bright blue on hover */
+}
+
+/* Password field container for toggle positioning */
+.password-field {
+  position: relative; /* Relative for absolute positioning of toggle button */
+  width: 100%;
+}
+
+/* Submit button */
+.btn-submit {
+  background-color: #2563EB; /* Bright blue */
+  color: #ffffff;
+  padding: 1rem;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover and click effects */
+}
+
+/* Hover effect for submit button */
+.btn-submit:hover {
+  background-color: #3B82F6; /* Lighter blue on hover */
+  transform: translateY(-2px); /* Gentle lift effect */
+}
+
+/* Disabled state for submit button */
+.btn-submit:disabled {
+  background-color: #475569; /* Gray background for disabled state */
+  cursor: not-allowed; /* Disabled cursor */
+}
+
+/* Submit button active (click) effect */
+.btn-submit:active {
+  transform: translateY(2px); /* Button press effect */
+}
+
+/* Message styling */
+.message {
+  margin-top: 1.5rem;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6EE7B7; /* Light green for success or info messages */
+  transition: color 0.3s ease; /* Smooth color change */
+}
+
+/* Hover effect for message */
+.message:hover {
+  color: #34D399; /* Slightly darker green on hover */
+  text-decoration: underline;
+}
+
+
+.password-rules {
+  margin-top: 1.5rem;
+  text-align: left;
+  font-size: 14px;
+  color: #94A3B8;
+}
+
+.password-rules label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.password-rules input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.password-rules p {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}

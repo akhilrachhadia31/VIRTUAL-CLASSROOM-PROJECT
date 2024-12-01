@@ -1,0 +1,279 @@
+/* Fullscreen background with blur and gradient */
+.background {
+    position: relative;
+    background-color: #0F172A; /* Deep navy blue for the background */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Content container */
+.container {
+    position: relative; /* Ensure content is above the blurred background */
+    z-index: 2;
+}
+
+/* Heading */
+.heading {
+    font-size: 42px;
+    font-weight: 700;
+    color: #E0F2FE; /* Soft pastel cyan for captivating text */
+    text-shadow: 0 4px 8px rgba(59, 130, 246, 0.6); /* Glow effect for the heading */
+    position: relative;
+    display: flex;
+    align-items: flex-start; /* Aligns the heading properly */
+    justify-content: flex-start;
+}
+
+.heading::after {
+    content: "";
+    width: 450px;
+    height: 3px;
+    border-radius: 2px;
+    bottom: -15px;
+    background-color: #38BDF8; /* Cyan underline */
+    position: absolute;
+}
+
+/* Form container */
+.form_container {
+    background: radial-gradient(circle, #1E293B 0%, #0F172A 100%);
+    display: flex;
+    margin-top: 45px;
+    width: 800px;
+    height: 450px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 30px;
+    z-index: 2;
+}
+
+/* Left section with image */
+.left {
+    flex: 1.5;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background-color: #0F172A; /* Match background color */
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fits the container */
+    object-position: center; /* Center the image within the block */
+}
+
+/* Right section with form */
+.right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1E293B;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+/* Form heading */
+.from_heading {
+    font-size: 28px;
+    font-weight: 600;
+    color: #C7D2FE; /* Soft lavender */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Form input styles */
+.input {
+    width: 320px;
+    height: 40px;
+    padding: 10px;
+    margin: 12px 0;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #475569; /* Input field background */
+    color: #E2E8F0; /* Light text */
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.input:focus {
+    background-color: #64748B;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.6); /* Highlight on focus */
+}
+
+/* Login button */
+.btn {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 25px;
+    color: white;
+    background-color: #3B82F6;
+    border: none;
+    border-radius: 12px;
+    margin: 15px 0 0 0;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2563EB;
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Text styles */
+.text {
+    font-size: 14px;
+    color: #A5B4FC; /* Gentle periwinkle */
+    margin: 5px 0;
+    padding: 0;
+    text-align: center;
+}
+
+.text > a {
+    font-size: 14px;
+    font-weight: 500;
+    color: #38BDF8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.text > a:hover {
+    color: #60A5FA; /* Slightly brighter */
+}
+
+/* Google login button */
+.google_btn {
+    width: 230px;
+    height: 40px;
+    border-radius: 8px;
+    border: 2px solid #3B82F6;
+    outline: none;
+    background-color: white;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+    color: #0F172A;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.google_btn:hover {
+    background-color: #3B82F6;
+    color: white;
+    border: 2px solid white;
+}
+
+.google_btn > img {
+    width: 20px;
+    height: 20px;
+}
+
+.google_btn > span {
+    margin-left: 10px;
+}
+
+/* Forgot password link */
+.forgot_password {
+    font-size: 15px;
+    color: #94A3B8;
+    text-align: center;
+    margin: 5px 0 10px 0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.forgot_password:hover {
+    color: #38BDF8;
+    text-decoration: underline;
+}
+
+/* Eye icon button for password visibility */
+.eye-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #94A3B8; /* Soft gray */
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.eye-btn:hover {
+    color: #38BDF8; /* Cyan when hovered */
+}
+
+/* Password container for handling input and eye icon */
+.passwordContainer {
+    position: relative;
+    width: 320px;
+}
+
+/* Eye icon button for password visibility */
+.eye-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #94A3B8; /* Soft gray */
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.eye-btn:hover {
+    color: #38BDF8; /* Cyan when hovered */
+}
+
+/* Input field styles */
+.input {
+    width: 320px;
+    height: 40px;
+    padding: 10px;
+    margin: 12px 0;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #475569; /* Input field background */
+    color: #E2E8F0; /* Light text */
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.input:focus {
+    background-color: #64748B;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.6); /* Highlight on focus */
+}
+
+/* Styling for password visibility toggle */
+.passwordContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.passwordContainer input {
+    width: 100%;
+    padding-right: 40px; /* Make space for the eye icon */
+}
