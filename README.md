@@ -1,9 +1,8 @@
-# Virtual Classroom Project
+# Learnify
 
 ## Description
-This project is a combination of Google Classroom and YouTube, offering a platform for managing and delivering educational content. It provides functionality similar to Google Classroom, including student tracking, individual classes, and the ability to monitor progress. Additionally, it allows educators to upload lectures along with accompanying materials, much like YouTube. 
-
-The goal is to offer a seamless experience for educators to manage classes and for students to access lectures, assignments, and resources in one integrated platform.
+Learnify is a platform that combines class management tools with a system for delivering educational content. Educators can organize classes and upload lectures with supporting materials. It provides a streamlined experience for educators to manage learning and for students to access lessons, assignments, and resources in a single location.
+The aim is to create a user-friendly and efficient platform for educators and students to manage and engage in learning activities. Learnify will enable class organization, assignment distribution and seamless access to educational resources, fostering an interactive and collaborative learning environment.
 
 ## Tech Stack
 - **Frontend**: React+Vite, CSS/TailwindCSS
@@ -15,6 +14,9 @@ The goal is to offer a seamless experience for educators to manage classes and f
 ## Features
 - User authentication (JWT-based)
 - CRUD operations for All Models
+- Create, organize, and manage multiple classes
+- Announcements for class updates
+- Separate dashboards for students and educators
 - Material Upload/download
 - Video upload
 - Mail Functionality(node mailer)
