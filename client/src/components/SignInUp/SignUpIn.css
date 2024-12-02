@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+* {
+    box-sizing: border-box;
+}
+
+.sui-login-body {
+    background: #1A1A2E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    margin: -20px 0 50px;
+    color: #fff;
+}
+
+.sui-login-body h1 {
+    font-weight: bold;
+    margin: 0;
+    color: #eee;
+}
+
+.sui-login-body h2 {
+    text-align: center;
+}
+
+.sui-login-body p {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 20px 0 30px;
+}
+
+.sui-login-body span {
+    font-size: 12px;
+}
+
+.sui-login-body a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
+}
+
+.sui-button {
+    border-radius: 20px;
+    border: 1px solid #00FFDD;
+    background-color: #00FFDD;
+    color: #FFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+}
+
+.sui-button:active {
+    transform: scale(0.95);
+}
+
+.sui-button:focus {
+    outline: none;
+}
+
+.sui-button.sui-ghost {
+    background-color: transparent;
+    border-color: #00FFDD;
+}
+
+.sui-login-body form {
+    background-color: #16213E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.sui-login-body input,
+.sui-login-body select {
+    background-color: #1F4068;
+    color: #FFF;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+}
+
+.sui-container {
+    background-color: #0F3460;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+}
+
+.sui-form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.sui-sign-in-container {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.sui-container.sui-right-panel-active .sui-sign-in-container {
+    transform: translateX(100%);
+}
+
+.sui-sign-up-container {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.sui-container.sui-right-panel-active .sui-sign-up-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: sui-show 0.6s;
+}
+
+@keyframes sui-show {
+    0%, 49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+    
+    50%, 100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+.sui-overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+
+.sui-container.sui-right-panel-active .sui-overlay-container{
+    transform: translateX(-100%);
+}
+
+.sui-overlay {
+    background: #00FFDD;
+    background: -webkit-linear-gradient(to right,#1F4068, #00FFDD);
+    background: linear-gradient(to right, #00FFDD, #1F4068);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    color: #FFFFFF;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.sui-container.sui-right-panel-active .sui-overlay {
+    transform: translateX(50%);
+}
+
+.sui-overlay-panel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.sui-overlay-left {
+    transform: translateX(-20%);
+}
+
+.sui-container.sui-right-panel-active .sui-overlay-left {
+    transform: translateX(0);
+}
+
+.sui-overlay-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.sui-container.sui-right-panel-active .sui-overlay-right {
+    transform: translateX(20%);
+}

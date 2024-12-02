@@ -1,0 +1,145 @@
+.otp-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #0F172A, #1E293B);
+  /* Updated gradient matching image style */
+  font-family: "Arial", sans-serif;
+  color: #ffffff;
+  margin: 0;
+  /* Full viewport height usage */
+}
+
+.background {
+  background-color: #1E293B;
+  background-size: cover;
+}
+
+.otp-card {
+  background: #1E293B;
+  /* Dark card background */
+  color: #ffffff;
+  /* White text */
+  padding: 2.5rem;
+  border-radius: 12px;
+  /* Rounded corners */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+  /* Subtle shadow */
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  /* Prevent card from being too wide */
+  margin: 1rem;
+  /* Space for responsive design */
+  transition: transform 0.3s ease-in-out;
+  /* Hover effect */
+}
+
+.otp-card:hover {
+  transform: translateY(-5px);
+  /* Gentle hover effect */
+}
+
+.otp-card h1 {
+  font-size: 24px;
+  /* Similar heading size to the provided image */
+  margin-bottom: 1rem;
+  /* Adjusted spacing */
+  color: #ffffff;
+  /* Bright white title */
+  font-weight: bold;
+  /* Strong emphasis */
+}
+
+.otp-card p {
+  font-size: 14px;
+  /* Similar to provided image */
+  margin-bottom: 1.5rem;
+  /* Adjusted spacing */
+  line-height: 1.5;
+  color: #94A3B8;
+  /* Muted text color */
+}
+
+.otp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  /* Spacing between inputs */
+}
+
+.otp-input {
+  padding: 1rem;
+  font-size: 16px;
+  /* Adjusted size for readability */
+  text-align: center;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  /* Rounded edges for inputs */
+  background-color: #334155;
+  /* Slightly darker input background */
+  color: #ffffff;
+  /* White text */
+  width: 100%;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  /* Smooth transitions */
+}
+
+.otp-input:focus {
+  outline: none;
+  border-color: #3B82F6;
+  /* Blue focus border */
+  box-shadow: 0 0 6px rgba(59, 130, 246, 0.8);
+  /* Subtle glow */
+
+}
+
+.otp-button {
+  background-color: #3B82F6;
+  /* Bright blue button */
+  color: #ffffff;
+  /* White text */
+  padding: 1rem;
+  font-size: 16px;
+  /* Button size adjustment */
+  border: none;
+  border-radius: 8px;
+  /* Rounded button */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+}
+
+.otp-button:hover {
+  background-color: #2563EB;
+  /* Darker blue on hover */
+  transform: translateY(-2px);
+  /* Subtle lift effect */
+}
+
+.otp-button:active {
+  transform: translateY(1px);
+  /* Click effect */
+}
+
+.resend-text {
+  font-size: 14px;
+  /* Adjusted size */
+  margin-top: 1rem;
+  color: #94A3B8;
+  /* Softer text color */
+}
+
+.resend-text a {
+  color: #3B82F6;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.resend-text a:hover {
+  color: #2563EB;
+  /* Subtle hover effect */
+  text-decoration: underline;
+}
