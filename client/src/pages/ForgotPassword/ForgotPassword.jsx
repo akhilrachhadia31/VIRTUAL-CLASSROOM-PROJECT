@@ -13,7 +13,7 @@ const ForgotPassword = () => {
     setMessage(''); // Clear previous messages
 
     try {
-      const response = await axios.post("http://localhost:8080/auth/forgot-password", {
+      const response = await axios.post("https://learne5.onrender.com/auth/forgot-password", {
         email: email,
       });
 
@@ -29,9 +29,11 @@ const ForgotPassword = () => {
         throw new Error('Failed to send reset email.');
       }
     } catch (error) {
-      setMessage(error.response?.data?.message || 'Error sending reset link. Please try again.');
+        alert("The email is not registered. Please check and try again.");
     }
   };
+
+   
 
   return (
     <div className="forgot-password-container">
@@ -46,6 +48,7 @@ const ForgotPassword = () => {
             onChange={(e) => setEmail(e.target.value)}
             required
             className="input-email"
+            
           />
           <button type="submit" className="btn-submit">
             Send Reset Link

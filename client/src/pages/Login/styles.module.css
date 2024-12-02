@@ -27,8 +27,8 @@
     text-shadow: 0 4px 8px rgba(59, 130, 246, 0.6); /* Glow effect for the heading */
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start; /* Aligns the heading properly */
+    justify-content: flex-start;
 }
 
 .heading::after {
@@ -72,7 +72,6 @@
     object-fit: cover; /* Ensures the image fits the container */
     object-position: center; /* Center the image within the block */
 }
-
 
 /* Right section with form */
 .right {
@@ -206,4 +205,75 @@
 .forgot_password:hover {
     color: #38BDF8;
     text-decoration: underline;
+}
+
+/* Eye icon button for password visibility */
+.eye-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #94A3B8; /* Soft gray */
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.eye-btn:hover {
+    color: #38BDF8; /* Cyan when hovered */
+}
+
+/* Password container for handling input and eye icon */
+.passwordContainer {
+    position: relative;
+    width: 320px;
+}
+
+/* Eye icon button for password visibility */
+.eye-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #94A3B8; /* Soft gray */
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.eye-btn:hover {
+    color: #38BDF8; /* Cyan when hovered */
+}
+
+/* Input field styles */
+.input {
+    width: 320px;
+    height: 40px;
+    padding: 10px;
+    margin: 12px 0;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #475569; /* Input field background */
+    color: #E2E8F0; /* Light text */
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.input:focus {
+    background-color: #64748B;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.6); /* Highlight on focus */
+}
+
+/* Styling for password visibility toggle */
+.passwordContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.passwordContainer input {
+    width: 100%;
+    padding-right: 40px; /* Make space for the eye icon */
 }

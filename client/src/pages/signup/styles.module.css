@@ -16,8 +16,8 @@
     text-shadow: 0 4px 8px rgba(59, 130, 246, 0.6); /* Glow effect for the heading */
     position: relative;
     display: flex;
-    align-items: left center;
-    justify-content: left center;
+    align-items: center;
+    justify-content: left;
 }
 
 .heading::after {
@@ -58,7 +58,7 @@
 .img {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    object-fit: full cover; /* Ensure the image scales properly */
+    object-fit: cover; /* Ensure the image scales properly */
     object-position: center; /* Center the image inside the container */
 }
 
@@ -104,6 +104,28 @@
 .input:focus {
     background-color: #64748B;
     box-shadow: 0 0 10px rgba(59, 130, 246, 0.6); /* Highlight on focus */
+}
+
+/* Styling for invalid input */
+.input.invalid {
+    /*border: 2px solid #F87171; Red border for invalid input */
+    background-color: #FFE4E4; /* Light red background for better visibility */
+    color: #B91C1C; /* Dark red text for invalid input */
+}
+
+.input.invalid:focus {
+    background-color: #FFD6D6;
+    box-shadow: 0 0 10px rgba(248, 113, 113, 0.6); /* Red highlight */
+}
+
+/* Error message */
+.error {
+    font-size: 14px;
+    color: #F87171; /* Bright red for visibility */
+    margin-top: -8px;
+    margin-bottom: 8px;
+    text-align: left;
+    width: 340px; /* Matches input width */
 }
 
 /* Dropdown menu */
@@ -194,5 +216,5 @@
 }
 
 .text > a:hover {
-    color: #60A5FA; /* Slightly brighter on hover */
+    color: #60A5FA;
 }

@@ -1,40 +1,65 @@
 import express from "express";
-import { login,signup,logout,verifyEmail,forgotPassword, resetPassword, checkAuth} from "../controllers/auth.controller.js";
-import { verifyToken } from "../middleware/verifyToken.js";
+import { login,signup,logout,verifyEmail,forgotPassword, resetPassword, checkAuth} from "../controller/auth.controller.js"
+import { authenticateToken } from "../middlewares/auth.middleware.js"
 import passport from "passport";
+import "../../passport.js"
+import jwt from "jsonwebtoken";
+import dotenv from "dotenv"
 
+dotenv.config({
+    path : "./.env",
+  })
+  
 const router = express.Router();
 
-router.get("/login/success", (req, res) => {
-	if (req.user) {
-		res.status(200).json({
-			error: false,
-			message: "Successfully Loged In",
-			user: req.user,
-		});
-	} else {
-		res.status(403).json({ error: true, message: "Not Authorized" });
-	}
-});
-
-router.get("/login/failed", (req, res) => {
-	res.status(401).json({
-		error: true,
-		message: "Log in failure",
-	});
-});
-
-router.get("/google", passport.authenticate("google", ["profile", "email"]));
+// router.get("/google", passport.authenticate("google", {scope:
+// 	["profile","email"]
+// }));
 
 router.get(
-	"/google/callback",
-	passport.authenticate('google', {
-		successRedirect: "http://localhost:3000/home",
-		failureRedirect: "login/failed",
-	})
+    "/google/callback",
+    passport.authenticate("google", {
+        scope: ["profile", "email"],
+    }),
+    (req, res) => {
+        const JWT_SECRET = process.env.JWT_SECRET_KEY;
+
+        // Check if the user was not found
+        if (!req.user) {
+            return res.send(`
+                <script>
+                    alert("User not found. Please sign up first.");
+                    window.opener.postMessage({ error: "User not found" }, "https://learnify-sk7g.onrender.com/login");
+                    window.close();
+                </script>
+            `);
+        }
+        
+
+        const user = req.user;
+        const token = jwt.sign({ userId: user._id, username: user.username }, JWT_SECRET, {
+            expiresIn: "1d",
+        });
+
+        // Send user and token to the parent window via postMessage
+        res.send(`
+            <script>
+                window.opener.postMessage({
+                    user: ${JSON.stringify(user)},
+                    token: "${token}"
+                }, "https://learnify-sk7g.onrender.com");
+                window.close();
+            </script>
+        `);
+    }
 );
 
-router.get("/check-auth",verifyToken,checkAuth)
+
+
+router.use(passport.initialize());
+router.use(passport.session());
+
+router.get("/check-auth",authenticateToken,checkAuth)
 
 router.post("/signup",signup);
 
